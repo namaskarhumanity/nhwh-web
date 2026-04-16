@@ -395,7 +395,7 @@ const About = () => {
                         className="text-sm font-bold text-slate-800"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
                       >
-                        Dharmendra Kumar <span style={{ color: "#099A6B" }}>- Developer</span>
+                        {user?.name} <span style={{ color: "#099A6B" }}>- {user?.role}</span>
                       </p>
                     </div>
                   </motion.div>

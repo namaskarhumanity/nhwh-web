@@ -62,8 +62,8 @@ const OurMission = () => {
   }, [server]);
 
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section className="py-12 md:py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -71,9 +71,9 @@ const OurMission = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <motion.div variants={itemVariants} className="mb-12">
+          <motion.div variants={itemVariants} className="mb-8 md:mb-12">
             <h2
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               {missionData.heading}
@@ -83,7 +83,7 @@ const OurMission = () => {
 
           <motion.div
             variants={itemVariants}
-            className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+            className="bg-white rounded-2xl shadow-xl p-5 sm:p-8 md:p-12"
           >
             {loadingMission ? (
               <div className="space-y-4">
@@ -110,13 +110,13 @@ const OurMission = () => {
 
                 {hasHtmlTags ? (
                   <div
-                    className="text-left text-lg text-gray-600 leading-relaxed [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mb-3 [&_ul]:list-disc [&_ul]:pl-6"
+                    className="text-left text-base sm:text-lg text-gray-600 leading-relaxed break-words [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mb-3 [&_ul]:list-disc [&_ul]:pl-6"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                     dangerouslySetInnerHTML={{ __html: sanitizedMissionDescription }}
                   />
                 ) : (
                   <p
-                    className="text-lg text-gray-600 leading-relaxed whitespace-pre-line"
+                    className="text-base sm:text-lg text-gray-600 leading-relaxed whitespace-pre-line break-words"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {missionData.description}

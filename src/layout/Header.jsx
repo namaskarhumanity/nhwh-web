@@ -133,7 +133,7 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:block">
+        <nav className="hidden xl:block">
           <ul className="flex items-center gap-1 rounded-2xl border border-slate-200/80 bg-slate-100/80 p-1.5 shadow-inner shadow-slate-200/60">
             {menuItems.map((item) => (
               <li key={item.name}>
@@ -177,7 +177,7 @@ const Header = () => {
 
         {/* Desktop Auth/Profile */}
         {isAuthenticated ? (
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <Link
               to="/donate"
               className="inline-flex items-center gap-2 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-700 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-100 hover:shadow-lg hover:shadow-emerald-500/10"
@@ -189,7 +189,7 @@ const Header = () => {
             <ProfileMenu user={authUser} accessToken={accessToken} />
           </div>
         ) : (
-          <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden xl:flex items-center space-x-3">
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 to="/sign-in"
@@ -227,7 +227,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <motion.button
-          className="lg:hidden rounded-2xl border border-slate-200 bg-white p-2.5 text-slate-800 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.5)] transition-all duration-200 hover:border-sky-200 hover:bg-sky-50"
+          className="xl:hidden rounded-2xl border border-slate-200 bg-white p-2.5 text-slate-800 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.5)] transition-all duration-200 hover:border-sky-200 hover:bg-sky-50"
           onClick={toggleMenu}
           whileTap={{ scale: 0.95 }}
         >
@@ -243,7 +243,7 @@ const Header = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black/40 backdrop-blur-sm lg:hidden z-40"
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm xl:hidden z-40"
                 onClick={toggleMenu}
               />
 
@@ -253,7 +253,7 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="absolute top-0 right-0 w-80 max-w-[90vw] h-screen bg-white shadow-2xl lg:hidden z-50 overflow-y-auto"
+                className="absolute top-0 right-0 w-80 max-w-[90vw] h-screen bg-white shadow-2xl xl:hidden z-50 overflow-y-auto"
               >
                 <div className="flex flex-col h-full">
                   {/* Header */}

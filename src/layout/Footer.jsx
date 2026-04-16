@@ -134,7 +134,7 @@ const Footer = () => {
               <div className="flex items-start gap-2.5">
                 <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-sky-500" />
                 <span className="text-sm text-slate-600">
-                  123 Welfare Street, Lucknow, Uttar Pradesh, India 226001
+                  Udahin Khurd Sirathu, Kaushambi, UP 212217
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
