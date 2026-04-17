@@ -213,7 +213,7 @@ const TestimonialsSection = () => {
                   </div>
 
                   <div
-                    className="text-gray-700 leading-relaxed mb-6 relative z-10 prose prose-sm max-w-none"
+                    className="text-gray-700 leading-relaxed mb-6 relative z-10 prose prose-sm max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg break-words"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                     dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(testimonial.feedback) }}
                   />

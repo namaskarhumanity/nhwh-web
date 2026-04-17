@@ -82,9 +82,61 @@ const Payment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validation
+    if (!formData.fullName.trim()) {
+      toast.error("Full name is required");
+      return;
+    }
+    if (!formData.email.trim()) {
+      toast.error("Email is required");
+      return;
+    }
+    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    if (!formData.phone.trim()) {
+      toast.error("Phone number is required");
+      return;
+    }
+    if (!/^\d{10}$/.test(formData.phone.trim())) {
+      toast.error("Please enter a valid 10-digit phone number");
+      return;
+    }
+    if (!formData.panCard.trim()) {
+      toast.error("PAN card number is required");
+      return;
+    }
+    if (!/^([A-Z]{5}[0-9]{4}[A-Z])$/.test(formData.panCard.trim().toUpperCase())) {
+      toast.error("Please enter a valid PAN card number (e.g., ABCDE1234F)");
+      return;
+    }
+    if (!formData.address.trim()) {
+      toast.error("Address is required");
+      return;
+    }
+    if (!formData.city.trim()) {
+      toast.error("City is required");
+      return;
+    }
+    if (!formData.pincode.trim()) {
+      toast.error("PIN code is required");
+      return;
+    }
+    if (!/^\d{6}$/.test(formData.pincode.trim())) {
+      toast.error("Please enter a valid 6-digit PIN code");
+      return;
+    }
     const amount = selectedAmount === "custom" ? formData.customAmount : selectedAmount;
     if (!amount || Number(amount) <= 0) {
       toast.error("Please select a valid donation amount");
+      return;
+    }
+    if (
+      selectedAmount === "custom" &&
+      (!formData.customAmount || Number(formData.customAmount) <= 0)
+    ) {
+      toast.error("Please enter a valid custom amount");
       return;
     }
 
@@ -410,7 +462,7 @@ const Payment = () => {
                         className="block text-sm font-semibold text-gray-700 mb-2"
                         style={{ fontFamily: "'Inter', sans-serif" }}
                       >
-                        PAN Card Number
+                        PAN Card Number <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
@@ -420,6 +472,7 @@ const Payment = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                         placeholder="Enter PAN card number"
                         style={{ fontFamily: "'Inter', sans-serif" }}
+                        required
                       />
                     </div>
                   </div>
