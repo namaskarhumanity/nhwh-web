@@ -1740,7 +1740,15 @@ const Dashboard = () => {
                         </span>
                       </div>
                       <h4 className="font-semibold text-slate-900">{item.title}</h4>
-                      <p className="mt-1 text-sm text-slate-500 line-clamp-3">{item.description}</p>
+                      <p className="mt-1 text-sm text-slate-500 line-clamp-3">
+                        {item.description
+                          ? item.description
+                              .replace(/<[^>]+>/g, " ")
+                              .replace(/&nbsp;/g, " ")
+                              .replace(/\s+/g, " ")
+                              .trim()
+                          : ""}
+                      </p>
                     </div>
                     <div className="mt-3 flex gap-2">
                       <button
@@ -2180,7 +2188,15 @@ const Dashboard = () => {
                       {item.stats ? (
                         <p className="mt-1 text-xs font-medium text-blue-600">{item.stats}</p>
                       ) : null}
-                      <p className="mt-1 text-sm text-slate-500 line-clamp-3">{item.description}</p>
+                      <p className="mt-1 text-sm text-slate-500 line-clamp-3">
+                        {item.description
+                          ? item.description
+                              .replace(/<[^>]+>/g, " ")
+                              .replace(/&nbsp;/g, " ")
+                              .replace(/\s+/g, " ")
+                              .trim()
+                          : ""}
+                      </p>
                     </div>
                     <div className="mt-3 flex gap-2">
                       <button
@@ -2368,7 +2384,15 @@ const Dashboard = () => {
                         </span>
                       </div>
 
-                      <p className="text-sm text-slate-600 line-clamp-4">{item.feedback}</p>
+                      <p className="text-sm text-slate-600 line-clamp-4">
+                        {item.feedback
+                          ? item.feedback
+                              .replace(/<[^>]+>/g, " ")
+                              .replace(/&nbsp;/g, " ")
+                              .replace(/\s+/g, " ")
+                              .trim()
+                          : ""}
+                      </p>
 
                       <div className="flex items-center justify-between text-xs text-slate-500">
                         <p>
