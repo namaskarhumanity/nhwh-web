@@ -20,7 +20,16 @@ const ICON_MAP = {
 };
 
 const getCardPreview = (value, maxLength = 180) => {
-  const plainText = DOMPurify.sanitize(String(value || ""), { ALLOWED_TAGS: [] })
+  const sanitized = DOMPurify.sanitize(String(value || ""), { ALLOWED_TAGS: [] });
+
+  const decodedText =
+    typeof window !== "undefined" && window.DOMParser
+      ? new window.DOMParser().parseFromString(sanitized, "text/html").documentElement
+          .textContent || ""
+      : sanitized;
+
+  const plainText = decodedText
+    .replace(/\u00a0/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 

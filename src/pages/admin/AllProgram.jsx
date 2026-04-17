@@ -260,16 +260,18 @@ const AllProgram = () => {
                     {p?.description || "No description provided"}
                   </p>
                 </div>
-                <div className="flex items-center justify-between border-t border-slate-200 pt-4">
-                  <span className="text-xs text-slate-500 font-medium">
-                    {p?.createdAt
-                      ? new Date(p.createdAt).toLocaleDateString("en-IN", {
-                          month: "short",
-                          day: "2-digit",
-                        })
-                      : "Date N/A"}
-                  </span>
-                  <div className="flex items-center gap-2">
+                <div className="flex flex-col border-t border-slate-200 pt-4">
+                  <div className="flex items-center justify-between w-full mb-2">
+                    <span className="text-xs text-slate-500 font-medium">
+                      {p?.createdAt
+                        ? new Date(p.createdAt).toLocaleDateString("en-IN", {
+                            month: "short",
+                            day: "2-digit",
+                          })
+                        : "Date N/A"}
+                    </span>
+                  </div>
+                  <div className="flex w-full justify-end gap-2">
                     <button
                       onClick={() => handleSelectForUpdate(p)}
                       type="button"
@@ -278,7 +280,6 @@ const AllProgram = () => {
                       <FiEdit className="h-4 w-4" />
                       <span className="text-xs font-medium">Update</span>
                     </button>
-
                     {deleteLoading && programId === p?._id ? (
                       <LodingButton content="Deleting..." btnClass="text-rose-600 text-xs" />
                     ) : (

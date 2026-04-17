@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import DOMPurify from "dompurify";
 import {
@@ -20,6 +20,7 @@ const ICON_MAP = {
 
 const InitiativeDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const server = import.meta.env.VITE_SERVER;
   const [initiative, setInitiative] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -143,16 +144,37 @@ const InitiativeDetail = () => {
                   ) : null}
                 </div>
 
+                <button
+                  type="button"
+                  onClick={() => navigate("/")}
+                  className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                  aria-label="Back"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Back
+                </button>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Detailed Overview</h2>
                 {/<[^>]+>/.test(initiative.description || "") ? (
                   <div
-                    className="text-gray-700 leading-relaxed text-lg [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6"
+                    className="text-gray-700 leading-relaxed text-base sm:text-lg break-words whitespace-pre-line [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_p]:break-words [&_li]:break-words"
+                    style={{ wordBreak: "break-word", overflowWrap: "anywhere" }}
                     dangerouslySetInnerHTML={{
                       __html: DOMPurify.sanitize(initiative.description || ""),
                     }}
                   />
                 ) : (
-                  <p className="text-gray-700 leading-relaxed whitespace-pre-line text-lg">
+                  <p
+                    className="text-gray-700 leading-relaxed whitespace-pre-line text-base sm:text-lg break-words"
+                    style={{ wordBreak: "break-word", overflowWrap: "anywhere" }}
+                  >
                     {initiative.description}
                   </p>
                 )}

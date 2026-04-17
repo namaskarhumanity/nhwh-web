@@ -139,7 +139,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2.5">
                 <PhoneIcon className="h-4 w-4 shrink-0 text-sky-500" />
-                <span className="text-sm text-slate-600">+91 9876543210</span>
+                <span className="text-sm text-slate-600">+91 8808250884</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <EnvelopeIcon className="h-4 w-4 shrink-0 text-sky-500" />

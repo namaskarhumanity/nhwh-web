@@ -197,7 +197,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-white">
+      <section className="bg-white py-14 sm:py-16 md:py-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -207,10 +207,10 @@ const Contact = () => {
         >
           <motion.div
             variants={itemVariants}
-            className="mx-auto mb-16 max-w-7xl px-6 text-center lg:px-8"
+            className="mx-auto mb-10 max-w-7xl px-4 text-center sm:mb-12 sm:px-6 lg:mb-16 lg:px-8"
           >
             <h2
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="mb-4 text-3xl font-bold text-gray-900 sm:mb-5 sm:text-4xl md:mb-6 md:text-5xl"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Find{" "}
@@ -218,9 +218,9 @@ const Contact = () => {
                 Our Location
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
+            <div className="mx-auto mb-6 h-1 w-20 bg-gradient-to-r from-blue-600 to-purple-600 sm:mb-8 sm:w-24"></div>
             <p
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="mx-auto max-w-3xl text-base text-gray-600 sm:text-lg md:text-xl"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Visit us at our headquarters in Uttar Pradesh, India.
@@ -245,15 +245,15 @@ const Contact = () => {
               {/* Subtle radial glow */}
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(99,102,241,0.12),transparent)]" />
 
-              <div className="relative z-10 flex flex-col items-center gap-6 px-6 text-center">
+              <div className="relative z-10 flex w-full max-w-xl flex-col items-center gap-5 px-4 text-center sm:gap-6 sm:px-6">
                 {/* Pin icon */}
-                <div className="flex h-20 w-20 items-center justify-center bg-gradient-to-br from-sky-500 to-indigo-600 shadow-[0_16px_40px_-12px_rgba(99,102,241,0.55)]">
+                <div className="flex h-16 w-16 items-center justify-center bg-gradient-to-br from-sky-500 to-indigo-600 shadow-[0_16px_40px_-12px_rgba(99,102,241,0.55)] sm:h-20 sm:w-20">
                   <MapPinIcon className="h-10 w-10 text-white" />
                 </div>
 
                 <div>
                   <h3
-                    className="text-2xl font-bold text-slate-800"
+                    className="text-xl font-bold text-slate-800 sm:text-2xl"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     Find Us Here
@@ -271,7 +271,7 @@ const Contact = () => {
                   href="https://maps.app.goo.gl/2fZDfez8cQMApA627?g_st=awb"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group border-t border-slate-200 px-2 pt-4 text-center transition-colors duration-300 hover:text-sky-700"
+                  className="group w-full border-t border-slate-200 px-1 pt-4 text-center transition-colors duration-300 hover:text-sky-700 sm:px-2"
                 >
                   <p
                     className="font-semibold text-slate-800"
@@ -285,9 +285,9 @@ const Contact = () => {
                   >
                     Udahin Khurd Sirathu, Kaushambi, UP 212217
                   </p>
-                  <div className="mt-3 flex items-center justify-center gap-1.5">
+                  <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5">
                     <span className="h-2 w-2 bg-sky-500"></span>
-                    <span className="text-xs font-medium text-sky-600 group-hover:underline">
+                    <span className="text-xs font-medium leading-relaxed text-sky-600 group-hover:underline">
                       Uttar Pradesh, India — Open in Maps
                     </span>
                   </div>
